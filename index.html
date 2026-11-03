@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A DevOps portfolio project demonstrating automated CI/CD with GitHub Actions, Docker and AWS EC2.">
+  <title>Automated CI/CD | DevOps Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="#home" aria-label="Pipeline home">PULSE<span>_CI/CD</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#stack">Tech stack</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#pipeline">Explore project <span>↗</span></a>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> DEVOPS PORTFOLIO PROJECT</div>
+        <h1>Ship code.<br><span>Not manual work.</span></h1>
+        <p class="hero-lead">An automated delivery pipeline that takes a web app from a Git push to a live Docker container on AWS EC2.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#pipeline">See how it works <span>→</span></a>
+          <a class="button button-ghost" href="#stack">Explore the stack</a>
+        </div>
+        <div class="hero-note"><span class="note-icon">↳</span> Built with HTML, CSS &amp; JavaScript · Deployed with Docker</div>
+      </div>
+
+      <div class="terminal-wrap" aria-label="Example deployment terminal output">
+        <div class="terminal">
+          <div class="terminal-top">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>deployment.log</span>
+            <span class="terminal-status">● pipeline preview</span>
+          </div>
+          <div class="terminal-content">
+            <p><span class="prompt">$</span> git push origin main</p>
+            <p class="muted">Enumerating objects... done</p>
+            <p><span class="ok">✓</span> GitHub Actions triggered</p>
+            <p><span class="ok">✓</span> Docker image built</p>
+            <p><span class="ok">✓</span> Image pushed to registry</p>
+            <p><span class="ok">✓</span> Connected to AWS EC2</p>
+            <p><span class="ok">✓</span> Container restarted</p>
+            <div class="terminal-result"><span class="result-pulse"></span> Deployment workflow ready</div>
+            <p class="terminal-cursor"><span class="prompt">$</span> <span class="cursor">▋</span></p>
+          </div>
+        </div>
+        <div class="float-card"><span class="float-icon">↗</span><div><strong>Continuous delivery</strong><small>Commit to cloud deployment</small></div></div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </section>
+
+    <section class="metrics" aria-label="Project summary">
+      <div><strong>01</strong><span>Source repository</span></div>
+      <div><strong>02</strong><span>Container image</span></div>
+      <div><strong>03</strong><span>Cloud deployment</span></div>
+      <div><strong>∞</strong><span>Repeatable releases</span></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-label">01 / THE PROJECT</div>
+      <div class="section-heading">
+        <h2>A smoother path<br>from code to cloud.</h2>
+        <p>This project demonstrates a practical CI/CD workflow for a static web application. A change pushed to the main branch starts an automated workflow that builds a Docker image, publishes it to Docker Hub and deploys it to an Ubuntu server on AWS EC2.</p>
+      </div>
+      <div class="about-callout"><span>✳</span><p><strong>The goal:</strong> reduce repetitive deployment steps, make releases consistent and show the core building blocks of a modern DevOps workflow.</p></div>
+    </section>
+
+    <section class="section stack-section" id="stack">
+      <div class="section-label">02 / THE TOOLKIT</div>
+      <div class="section-title-row"><h2>Tools of the trade.</h2><p>Each tool has a specific role in the delivery process.</p></div>
+      <div class="stack-grid">
+        <article class="stack-card"><div class="stack-icon html-icon">5</div><h3>HTML5</h3><p>Defines the structure and content of the web application.</p><span class="stack-type">FRONTEND</span></article>
+        <article class="stack-card"><div class="stack-icon css-icon">✳</div><h3>CSS3</h3><p>Creates the visual design and responsive layout.</p><span class="stack-type">FRONTEND</span></article>
+        <article class="stack-card"><div class="stack-icon js-icon">JS</div><h3>JavaScript</h3><p>Adds navigation interactions and page behaviour.</p><span class="stack-type">FRONTEND</span></article>
+        <article class="stack-card"><div class="stack-icon git-icon">⌘</div><h3>GitHub</h3><p>Hosts source code and tracks changes over time.</p><span class="stack-type">VERSION CONTROL</span></article>
+        <article class="stack-card"><div class="stack-icon actions-icon">⚙</div><h3>GitHub Actions</h3><p>Runs the build and deployment workflow on each push.</p><span class="stack-type">AUTOMATION</span></article>
+        <article class="stack-card"><div class="stack-icon docker-icon">▰</div><h3>Docker</h3><p>Packages the site and Nginx web server into an image.</p><span class="stack-type">CONTAINERS</span></article>
+        <article class="stack-card"><div class="stack-icon hub-icon">⬡</div><h3>Docker Hub</h3><p>Stores versioned images for the deployment server.</p><span class="stack-type">IMAGE REGISTRY</span></article>
+        <article class="stack-card"><div class="stack-icon aws-icon">☁</div><h3>AWS EC2</h3><p>Runs the application in a cloud virtual machine.</p><span class="stack-type">CLOUD HOSTING</span></article>
+      </div>
+    </section>
+
+    <section class="section pipeline-section" id="pipeline">
+      <div class="section-label">03 / THE WORKFLOW</div>
+      <div class="section-title-row"><h2>One push.<br>Six steps to live.</h2><p>The workflow is triggered when code is pushed to the main branch.</p></div>
+      <div class="pipeline">
+        <article class="pipeline-step"><div class="step-top"><span>01</span><span class="step-symbol">⌨</span></div><h3>Write code</h3><p>Build and update the website in Visual Studio Code.</p><small>DEVELOPER</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>02</span><span class="step-symbol">⑂</span></div><h3>Push to GitHub</h3><p>Commit changes and push them to the main branch.</p><small>VERSION CONTROL</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>03</span><span class="step-symbol">⚙</span></div><h3>Run workflow</h3><p>GitHub Actions checks out code and starts the job.</p><small>CI/CD</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>04</span><span class="step-symbol">▣</span></div><h3>Build image</h3><p>Docker builds the app image and pushes it to Docker Hub.</p><small>CONTAINER</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>05</span><span class="step-symbol">☁</span></div><h3>Deploy to EC2</h3><p>The server pulls the new image and replaces the old container.</p><small>CLOUD</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>06</span><span class="step-symbol">↗</span></div><h3>Go live</h3><p>Nginx serves the updated website over HTTP.</p><small>DELIVERY</small></article>
+      </div>
+      <div class="pipeline-foot"><span class="live-dot"></span> Automated delivery flow <span class="foot-line"></span><span>Git push → live application</span></div>
+    </section>
+
+    <section class="section outcomes-section">
+      <div class="section-label">04 / WHAT THIS SHOWCASES</div>
+      <div class="outcomes">
+        <div><h2>More than a website.<br><span>A repeatable release process.</span></h2><p>Use this project to demonstrate practical experience with source control, containerization, workflow automation and cloud hosting.</p></div>
+        <ul>
+          <li><span>✓</span> Automated build and deployment</li>
+          <li><span>✓</span> Docker image packaging</li>
+          <li><span>✓</span> Version-controlled source code</li>
+          <li><span>✓</span> Cloud-based application hosting</li>
+          <li><span>✓</span> A foundation for monitoring and testing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-label">05 / NEXT RELEASE</div>
+      <h2>Build. Automate.<br><span>Keep improving.</span></h2>
+      <p>This is a learning project and portfolio demonstration. Connect your own GitHub repository to show the source code and deployment history.</p>
+      <a class="button button-primary" href="https://github.com/" target="_blank" rel="noopener noreferrer">Find me on GitHub <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home">PULSE<span>_CI/CD</span></a><p>Designed and built as a DevOps learning project.</p><span>© <span id="year"></span> · All systems learning</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
