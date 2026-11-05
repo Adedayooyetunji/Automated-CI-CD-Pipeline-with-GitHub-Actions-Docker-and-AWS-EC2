@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A DevOps portfolio project demonstrating automated CI/CD with GitHub Actions, Docker and AWS EC2.">
+  <meta name="description" content="A DevOps portfolio project demonstrating automated deployment to GitHub Pages with GitHub Actions.">
   <title>Automated CI/CD | DevOps Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -25,12 +25,12 @@
       <div class="hero-copy">
         <div class="eyebrow"><span class="live-dot"></span> DEVOPS PORTFOLIO PROJECT</div>
         <h1>Ship code.<br><span>Not manual work.</span></h1>
-        <p class="hero-lead">An automated delivery pipeline that takes a web app from a Git push to a live Docker container on AWS EC2.</p>
+        <p class="hero-lead">An automated deployment pipeline that takes a web app from a Git push to a live site on GitHub Pages.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#pipeline">See how it works <span>→</span></a>
           <a class="button button-ghost" href="#stack">Explore the stack</a>
         </div>
-        <div class="hero-note"><span class="note-icon">↳</span> Built with HTML, CSS &amp; JavaScript · Deployed with Docker</div>
+        <div class="hero-note"><span class="note-icon">↳</span> Built with HTML, CSS &amp; JavaScript · Deployed with GitHub Pages</div>
       </div>
 
       <div class="terminal-wrap" aria-label="Example deployment terminal output">
@@ -44,31 +44,31 @@
             <p><span class="prompt">$</span> git push origin main</p>
             <p class="muted">Enumerating objects... done</p>
             <p><span class="ok">✓</span> GitHub Actions triggered</p>
-            <p><span class="ok">✓</span> Docker image built</p>
-            <p><span class="ok">✓</span> Image pushed to registry</p>
-            <p><span class="ok">✓</span> Connected to AWS EC2</p>
-            <p><span class="ok">✓</span> Container restarted</p>
-            <div class="terminal-result"><span class="result-pulse"></span> Deployment workflow ready</div>
+            <p><span class="ok">✓</span> Static site files prepared</p>
+            <p><span class="ok">✓</span> Pages artifact uploaded</p>
+            <p><span class="ok">✓</span> Deployed to GitHub Pages</p>
+            <p><span class="ok">✓</span> HTTPS site updated</p>
+            <div class="terminal-result"><span class="result-pulse"></span> GitHub Pages deployment ready</div>
             <p class="terminal-cursor"><span class="prompt">$</span> <span class="cursor">▋</span></p>
           </div>
         </div>
-        <div class="float-card"><span class="float-icon">↗</span><div><strong>Continuous delivery</strong><small>Commit to cloud deployment</small></div></div>
+        <div class="float-card"><span class="float-icon">↗</span><div><strong>Continuous delivery</strong><small>Commit to live site</small></div></div>
       </div>
       <div class="hero-grid" aria-hidden="true"></div>
     </section>
 
     <section class="metrics" aria-label="Project summary">
       <div><strong>01</strong><span>Source repository</span></div>
-      <div><strong>02</strong><span>Container image</span></div>
-      <div><strong>03</strong><span>Cloud deployment</span></div>
+      <div><strong>02</strong><span>Pages artifact</span></div>
+      <div><strong>03</strong><span>GitHub Pages</span></div>
       <div><strong>∞</strong><span>Repeatable releases</span></div>
     </section>
 
     <section class="section about-section" id="about">
       <div class="section-label">01 / THE PROJECT</div>
       <div class="section-heading">
-        <h2>A smoother path<br>from code to cloud.</h2>
-        <p>This project demonstrates a practical CI/CD workflow for a static web application. A change pushed to the main branch starts an automated workflow that builds a Docker image, publishes it to Docker Hub and deploys it to an Ubuntu server on AWS EC2.</p>
+        <h2>A smoother path<br>from code to live site.</h2>
+        <p>This project demonstrates a practical CI/CD workflow for a static web application. A change pushed to the main branch starts GitHub Actions, which packages the site files and deploys them to GitHub Pages over HTTPS.</p>
       </div>
       <div class="about-callout"><span>✳</span><p><strong>The goal:</strong> reduce repetitive deployment steps, make releases consistent and show the core building blocks of a modern DevOps workflow.</p></div>
     </section>
@@ -82,9 +82,9 @@
         <article class="stack-card"><div class="stack-icon js-icon">JS</div><h3>JavaScript</h3><p>Adds navigation interactions and page behaviour.</p><span class="stack-type">FRONTEND</span></article>
         <article class="stack-card"><div class="stack-icon git-icon">⌘</div><h3>GitHub</h3><p>Hosts source code and tracks changes over time.</p><span class="stack-type">VERSION CONTROL</span></article>
         <article class="stack-card"><div class="stack-icon actions-icon">⚙</div><h3>GitHub Actions</h3><p>Runs the build and deployment workflow on each push.</p><span class="stack-type">AUTOMATION</span></article>
-        <article class="stack-card"><div class="stack-icon docker-icon">▰</div><h3>Docker</h3><p>Packages the site and Nginx web server into an image.</p><span class="stack-type">CONTAINERS</span></article>
-        <article class="stack-card"><div class="stack-icon hub-icon">⬡</div><h3>Docker Hub</h3><p>Stores versioned images for the deployment server.</p><span class="stack-type">IMAGE REGISTRY</span></article>
-        <article class="stack-card"><div class="stack-icon aws-icon">☁</div><h3>AWS EC2</h3><p>Runs the application in a cloud virtual machine.</p><span class="stack-type">CLOUD HOSTING</span></article>
+        <article class="stack-card"><div class="stack-icon docker-icon">▰</div><h3>Docker</h3><p>Available for local experimentation; not used by the live Pages deployment.</p><span class="stack-type">OPTIONAL</span></article>
+        <article class="stack-card"><div class="stack-icon hub-icon">⬡</div><h3>GitHub Pages</h3><p>Hosts the live static site and publishes updates from the deployment workflow.</p><span class="stack-type">HOSTING</span></article>
+        <article class="stack-card"><div class="stack-icon aws-icon">☁</div><h3>AWS EC2 (previous)</h3><p>The original hosting target; this project now deploys to GitHub Pages.</p><span class="stack-type">PREVIOUS HOSTING</span></article>
       </div>
     </section>
 
@@ -95,22 +95,22 @@
         <article class="pipeline-step"><div class="step-top"><span>01</span><span class="step-symbol">⌨</span></div><h3>Write code</h3><p>Build and update the website in Visual Studio Code.</p><small>DEVELOPER</small></article>
         <article class="pipeline-step"><div class="step-top"><span>02</span><span class="step-symbol">⑂</span></div><h3>Push to GitHub</h3><p>Commit changes and push them to the main branch.</p><small>VERSION CONTROL</small></article>
         <article class="pipeline-step"><div class="step-top"><span>03</span><span class="step-symbol">⚙</span></div><h3>Run workflow</h3><p>GitHub Actions checks out code and starts the job.</p><small>CI/CD</small></article>
-        <article class="pipeline-step"><div class="step-top"><span>04</span><span class="step-symbol">▣</span></div><h3>Build image</h3><p>Docker builds the app image and pushes it to Docker Hub.</p><small>CONTAINER</small></article>
-        <article class="pipeline-step"><div class="step-top"><span>05</span><span class="step-symbol">☁</span></div><h3>Deploy to EC2</h3><p>The server pulls the new image and replaces the old container.</p><small>CLOUD</small></article>
-        <article class="pipeline-step"><div class="step-top"><span>06</span><span class="step-symbol">↗</span></div><h3>Go live</h3><p>Nginx serves the updated website over HTTP.</p><small>DELIVERY</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>04</span><span class="step-symbol">▣</span></div><h3>Prepare site</h3><p>GitHub Actions collects the HTML, CSS and JavaScript files.</p><small>BUILD</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>05</span><span class="step-symbol">☁</span></div><h3>Upload Pages artifact</h3><p>The prepared static site is uploaded as a GitHub Pages artifact.</p><small>ARTIFACT</small></article>
+        <article class="pipeline-step"><div class="step-top"><span>06</span><span class="step-symbol">↗</span></div><h3>Deploy to Pages</h3><p>GitHub Pages publishes the updated website securely over HTTPS.</p><small>DELIVERY</small></article>
       </div>
-      <div class="pipeline-foot"><span class="live-dot"></span> Automated delivery flow <span class="foot-line"></span><span>Git push → live application</span></div>
+      <div class="pipeline-foot"><span class="live-dot"></span> Automated delivery flow <span class="foot-line"></span><span>Git push → live website</span></div>
     </section>
 
     <section class="section outcomes-section">
       <div class="section-label">04 / WHAT THIS SHOWCASES</div>
       <div class="outcomes">
-        <div><h2>More than a website.<br><span>A repeatable release process.</span></h2><p>Use this project to demonstrate practical experience with source control, containerization, workflow automation and cloud hosting.</p></div>
+        <div><h2>More than a website.<br><span>A repeatable release process.</span></h2><p>Use this project to demonstrate practical experience with source control, workflow automation and static site hosting.</p></div>
         <ul>
           <li><span>✓</span> Automated build and deployment</li>
-          <li><span>✓</span> Docker image packaging</li>
+          <li><span>✓</span> Automated GitHub Pages deployment</li>
           <li><span>✓</span> Version-controlled source code</li>
-          <li><span>✓</span> Cloud-based application hosting</li>
+          <li><span>✓</span> Secure HTTPS site delivery</li>
           <li><span>✓</span> A foundation for monitoring and testing</li>
         </ul>
       </div>
